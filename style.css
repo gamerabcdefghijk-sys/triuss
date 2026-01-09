@@ -38,12 +38,12 @@ body {
 }
 
 #smooth-wrapper {
-    overflow: hidden;
-    position: fixed;
-    height: 100%;
+    /* overflow: hidden; Removed for native scroll */
+    /* position: fixed; Removed for native scroll */
+    /* height: 100%; Removed for native scroll */
     width: 100%;
-    top: 0;
-    left: 0;
+    /* top: 0; Removed for native scroll */
+    /* left: 0; Removed for native scroll */
 }
 
 #smooth-content {
