@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Solutions Specialist | Independent Consultant</title>
+    <meta name="description"
+        content="Independent Digital Solutions Specialist helping small businesses and startups with smart web solutions, automation, and AI agents.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@700&family=Poppins:wght@900&family=Space+Mono:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willem Loading Animation</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- GSAP and Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+</head>
+
+<body>
+    <section class="willem-header is--loading">
+        <div class="willem-loader">
+            <div class="willem__h1">
+                <div class="willem__h1-start">
+                    <span class="willem__letter">T</span>
+                    <span class="willem__letter">R</span>
+                    <span class="willem__letter">I</span>
+                </div>
+                <div class="willem-loader__box">
+                    <div class="willem-loader__box-inner">
+                        <div class="willem__growing-image">
+                            <div class="willem__growing-image-wrap">
+                                <img class="willem__cover-image-extra is--1" src="images/opening_scene_web.png"
+                                    loading="lazy" alt="Web Development">
+                                <img class="willem__cover-image-extra is--2" src="images/opening_scene_marketing.png"
+                                    loading="lazy" alt="Digital Marketing">
+                                <img class="willem__cover-image" src="images/opening_scene_hero.png" loading="lazy"
+                                    alt="Portfolio Preview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="willem__h1-end">
+                    <span class="willem__letter">U</span>
+                    <span class="willem__letter">S</span>
+                    <span class="willem__letter">S</span>
+                </div>
+            </div>
+        </div>
+        <div class="willem-header__content">
+            <div class="willem-header__top">
+                <nav class="willen-nav">
+                    <div class="willem-nav__start">
+                        <!-- <a href="https://www.osmo.supply?utm_source=codepen&utm_medium=pen&utm_campaign=willem-loading-animation"
+                      target="_blank" class="willem-nav__link">Osmo ©</a> -->
+                    </div>
+                    <!-- <div class="willem-nav__end">
+                  <div class="willem-nav__links">
+                     <a href="https://www.osmo.supply?utm_source=codepen&utm_medium=pen&utm_campaign=willem-loading-animation"
+                        target="_blank" class="willem-nav__link">Projects,</a>
+                     <a href="https://www.osmo.supply?utm_source=codepen&utm_medium=pen&utm_campaign=willem-loading-animation"
+                        target="_blank" class="willem-nav__link">Services,</a>
+                     <a href="https://www.osmo.supply?utm_source=codepen&utm_medium=pen&utm_campaign=willem-loading-animation"
+                        target="_blank" class="willem-nav__link">Blog (13)</a>
+                  </div>
+                  <div class="willem-nav__cta">
+                     <a href="https://www.osmo.supply?utm_source=codepen&utm_medium=pen&utm_campaign=willem-loading-animation"
+                        target="_blank" class="willem-nav__link">Get in touch</a>
+                  </div>
+               </div> -->
+                </nav>
+            </div>
+            <div class="willem-header__bottom">
+                <!-- <div class="willem__h1">
+               <span class="willem__letter-white">W</span>
+               <span class="willem__letter-white">i</span>
+               <span class="willem__letter-white">l</span>
+               <span class="willem__letter-white">l</span>
+               <span class="willem__letter-white">e</span>
+               <span class="willem__letter-white">m </span>
+               <span class="willem__letter-white is--space">©</span>
+            </div> -->
+                <!-- <p class="osmo-credits__p">Resource by <a
+                  href="https://www.osmo.supply?utm_source=codepen&utm_medium=pen&utm_campaign=willem-loading-animation"
+                  target="_blank" class="osmo-credits__p-a">Osmo</a>
+            </p> -->
+            </div>
+        </div>
+    </section>
+
+    <div class="grid-background"></div>
+    <canvas id="fluid-canvas"></canvas>
+
+    <header>
+        <nav class="container">
+            <div class="logo">TRIUSS</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#process">Process</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <main>
+                <!-- Hero Section (Visual Hook) -->
+                <section id="home" class="hero container">
+                    <div class="hero-content">
+                        <h1>We Build Digital Products That Work in the Real World</h1>
+                        <p>From high-performance websites to automation and AI-powered systems, we design and build
+                            solutions that help businesses grow, scale, and operate smarter.</p>
+                    </div>
+
+                    <div class="cards-wrapper">
+                        <a href="#about" class="card card-left" data-speed="0.95" data-lag="0.1">
+                            <img src="images/about_us_original.png" alt="Mission Vision Values" loading="lazy">
+                            <div class="card-tag">About</div>
+                        </a>
+                        <a href="#contact" class="card card-middle" data-speed="1.05" data-lag="0.2">
+                            <img src="images/hero_contact.png" alt="Contact Us" loading="lazy">
+                            <div class="card-tag">Contact</div>
+                        </a>
+                        <a href="#services" class="card card-right" data-speed="0.9" data-lag="0.15">
+                            <img src="images/hero_services.jpg" alt="Services" loading="lazy">
+                            <div class="card-tag">Services</div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- About Us Section -->
+                <section id="about" class="about-us-section container">
+                    <div class="about-us-container">
+                        <div class="about-us-image-side">
+                            <div class="about-us-image">
+                                <img src="images/about_team_stack.png" alt="Team Success" loading="lazy">
+                            </div>
+                            <div class="stats-bar">
+                                <div class="stat-item">
+                                    <span class="stat-number">2025</span>
+                                    <span class="stat-label">Founded</span>
+                                </div>
+                                <div class="stat-divider"></div>
+                                <div class="stat-item">
+                                    <span class="stat-number">85+</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                                <div class="stat-divider"></div>
+                                <div class="stat-item">
+                                    <span class="stat-number">55+</span>
+                                    <span class="stat-label">Clients</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-us-content">
+                            <h1 class="section-title-large">About Us</h1>
+                            <h2>Building Technology That Works</h2>
+                            <p>At TRIUSS, we are a dynamic team of three seasoned professionals dedicated to delivering
+                                top-tier digital solutions. With extensive experience handling diverse projects as both
+                                full-time employees and dedicated freelancers, we bring a unique blend of corporate
+                                discipline and creative flexibility to every collaboration.</p>
+
+                            <div class="about-approach">
+                                <h3>Our approach is simple:</h3>
+                                <ul>
+                                    <li>Leverage collective expertise</li>
+                                    <li>Build clean and efficient solutions</li>
+                                    <li>Deliver systems that actually get used</li>
+                                </ul>
+                            </div>
+
+                            <p>We have successfully delivered projects across healthcare, education, e-commerce, and
+                                internal business automation. Our combined experience ensures that we focus on
+                                performance, usability, and long-term value, providing you with a partner who truly
+                                understands the full spectrum of software development.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- High-Impact Services Heading -->
+                <section class="services-heading-section container">
+                    <div class="heading-main" data-speed="1.15">
+                        <div class="outline-text">
+                            <span id="scramble-services"></span>
+                            <span id="scramble-provided"></span>
+                        </div>
+                    </div>
+                    <div class="services-subheading-seo">
+                        <p>Scale your business with expert web development, AI-powered automation, and technical SEO
+                            strategies.</p>
+                    </div>
+                </section>
+
+                <!-- Services Section (Expanding Cards) -->
+                <section id="services" class="exp-card-section">
+                    <div class="exp-card-container">
+                        <!-- Service 1 -->
+                        <div class="exp-card bg-1 active">
+                            <span class="rotated-title">WEB SOLUTIONS</span>
+                            <div class="exp-card-image-container">
+                                <img src="images/web_development_new.png" alt="Web Solutions">
+                            </div>
+                            <div class="exp-card-content">
+                                <h3>Web Solutions</h3>
+                                <p>Custom websites and robust web applications designed to streamline business
+                                    operations and enhance your online presence with speed and security.</p>
+                            </div>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="exp-card bg-2">
+                            <span class="rotated-title">E-COMMERCE</span>
+                            <div class="exp-card-image-container">
+                                <img src="images/ecommerce_new.png" alt="E-Commerce Solutions">
+                            </div>
+                            <div class="exp-card-content">
+                                <h3>E-Commerce</h3>
+                                <p>Scalable online stores with seamless payment integration, user-friendly interfaces,
+                                    and optimized checkout experiences to drive sales.</p>
+                            </div>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="exp-card bg-3">
+                            <span class="rotated-title">WHATSAPP COMMERCE</span>
+                            <div class="exp-card-image-container">
+                                <img src="images/whatsapp_commerce_new.png" alt="WhatsApp Commerce">
+                            </div>
+                            <div class="exp-card-content">
+                                <h3>WhatsApp Commerce</h3>
+                                <p>Powerful mini-stores and shopping experiences built directly within WhatsApp,
+                                    allowing customers to browse and buy without leaving the app.</p>
+                            </div>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="exp-card bg-4">
+                            <span class="rotated-title">SEO & GOOGLE BUSINESS</span>
+                            <div class="exp-card-image-container">
+                                <img src="images/seo_google_business_new.png" alt="SEO & Google Business">
+                            </div>
+                            <div class="exp-card-content">
+                                <h3>SEO & Google Business</h3>
+                                <p>Data-driven SEO strategies and Google Business Profile optimization to dominate local
+                                    search results and attract high-intent customers.</p>
+                            </div>
+                        </div>
+                        <!-- Service 5 -->
+                        <div class="exp-card bg-5">
+                            <span class="rotated-title">CALL AGENTS & TELEPHONY</span>
+                            <div class="exp-card-image-container">
+                                <img src="images/ai_agents_new.jpg" alt="Call Agents & Telephony">
+                            </div>
+                            <div class="exp-card-content">
+                                <h3>Call Agents & Telephony</h3>
+                                <p>Custom AI agents that automate your workflows by connecting apps like Gmail,
+                                    Calendar, and Sheets to streamline operations.</p>
+                            </div>
+                        </div>
+                        <!-- Service 6 -->
+
+                        <!-- Service 7 -->
+                        <div class="exp-card bg-7">
+                            <span class="rotated-title">BILLING MANAGEMENT</span>
+                            <div class="exp-card-image-container">
+                                <img src="images/billing_management_new.png" alt="Billing & Inventory Management">
+                            </div>
+                            <div class="exp-card-content">
+                                <h3>Billing & Inventory</h3>
+                                <p>Automated billing systems and real-time inventory tracking tools designed to simplify
+                                    finances and stock management for retail and services.</p>
+                            </div>
+                        </div>
+                        <!-- Service 8 -->
+                        <div class="exp-card bg-8">
+                            <span class="rotated-title">SOCIAL MEDIA MARKETING</span>
+                            <div class="exp-card-image-container">
+                                <img src="images/social_media_marketing_new.png" alt="Social Media Marketing">
+                            </div>
+                            <div class="exp-card-content">
+                                <h3>Social Media Marketing</h3>
+                                <p>Strategic social media management and high-conversion ad campaigns tailored to build
+                                    brand authority and engage your target audience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Heading -->
+                <section class="projects-heading-section">
+                    <div class="section-header center">
+                        <h1 class="projects-main-title">Success Stories Delivered</h1>
+                    </div>
+                </section>
+
+                <!-- Team Carousel Section -->
+                <section id="work" class="team-carousel-wrapper container">
+                    <div class="team-carousel-section-container">
+                        <div class="team-carousel-inner">
+                            <div class="team-carousel-track">
+                                <div class="team-card" data-index="0">
+                                    <img src="https://ik.imagekit.io/gopichakradhar/luffy/o1.jpeg?updatedAt=1754289569411"
+                                        alt="Team Member 1">
+                                </div>
+                                <div class="team-card" data-index="1">
+                                    <img src="images/projects/logo-dark.png" alt="ASPL Tech Solutions">
+                                </div>
+
+                                <div class="team-card" data-index="2">
+                                    <img src="https://ik.imagekit.io/gopichakradhar/luffy/o3.jpeg?updatedAt=1754289569422"
+                                        alt="Team Member 4">
+                                </div>
+                                <div class="team-card" data-index="3">
+                                    <img src="images/projects/group03.JPG" alt="Blue Mind Surf">
+                                </div>
+                                <div class="team-card" data-index="4">
+                                    <img src="https://ik.imagekit.io/gopichakradhar/luffy/o6.jpeg?updatedAt=1754289569438"
+                                        alt="Team Member 6">
+                                </div>
+                                <div class="team-card" data-index="5">
+                                    <img src="images/projects/slider2.jpeg" alt="Angel's Empyrean">
+                                </div>
+                                <div class="team-card" data-index="6">
+                                    <img src="images/projects/badminton_site.png" alt="Badminton Site">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-controls-section">
+                        <div class="team-member-info">
+                            <h2 class="team-member-name">Suraksha Hospital</h2>
+                            <p class="team-member-role">Healthcare Solutions</p>
+                            <a href="https://suraksha.hospital" target="_blank" class="team-live-link">View Live
+                                Project</a>
+                        </div>
+
+                        <div class="carousel-nav-arrows">
+                            <button class="nav-arrow prev" title="Previous Project">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button class="nav-arrow next" title="Next Project">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Development Process Section -->
+                <section id="process" class="process-section section">
+                    <div class="container">
+                        <div class="steps-header">
+                            <h2 class="section-title-center">Our Development Process</h2>
+                        </div>
+
+                        <div class="steps-row">
+                            <!-- SVG Marker Definition -->
+                            <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                                <defs>
+                                    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6"
+                                        markerHeight="6" orient="auto">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255, 255, 255, 0.6)" />
+                                    </marker>
+                                </defs>
+                            </svg>
+
+                            <!-- Step 1 -->
+                            <div class="step-item">
+                                <div class="step-visual">
+                                    <div class="step-icon-box">
+                                        <span class="step-emoji">💡</span>
+                                    </div>
+                                    <div class="step-arrow-wrapper">
+                                        <svg viewBox="0 0 150 40" preserveAspectRatio="none" class="step-arrow-svg">
+                                            <path d="M0,25 C50,0 100,0 145,25" fill="none"
+                                                stroke="rgba(255, 255, 255, 0.5)" stroke-width="2"
+                                                stroke-dasharray="6,4" marker-end="url(#arrowhead)" />
+                                            <circle cx="0" cy="25" r="4" fill="rgba(255, 255, 255, 0.6)" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-label">STEP 1</span>
+                                    <h3 class="step-title">Discovery</h3>
+                                    <p class="step-desc">We analyze your goals, understand the market, and define the
+                                        core
+                                        problem to solve.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="step-item">
+                                <div class="step-visual">
+                                    <div class="step-icon-box">
+                                        <span class="step-emoji">📝</span>
+                                    </div>
+                                    <div class="step-arrow-wrapper">
+                                        <svg viewBox="0 0 150 40" preserveAspectRatio="none" class="step-arrow-svg">
+                                            <path d="M0,25 C50,0 100,0 145,25" fill="none"
+                                                stroke="rgba(255, 255, 255, 0.5)" stroke-width="2"
+                                                stroke-dasharray="6,4" marker-end="url(#arrowhead)" />
+                                            <circle cx="0" cy="25" r="4" fill="rgba(255, 255, 255, 0.6)" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-label">STEP 2</span>
+                                    <h3 class="step-title">Strategy</h3>
+                                    <p class="step-desc">Creating detailed roadmaps, architectural blueprints, and
+                                        selecting
+                                        the right tech stack.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="step-item">
+                                <div class="step-visual">
+                                    <div class="step-icon-box">
+                                        <span class="step-emoji">⚙️</span>
+                                    </div>
+                                    <div class="step-arrow-wrapper">
+                                        <svg viewBox="0 0 150 40" preserveAspectRatio="none" class="step-arrow-svg">
+                                            <path d="M0,25 C50,0 100,0 145,25" fill="none"
+                                                stroke="rgba(255, 255, 255, 0.5)" stroke-width="2"
+                                                stroke-dasharray="6,4" marker-end="url(#arrowhead)" />
+                                            <circle cx="0" cy="25" r="4" fill="rgba(255, 255, 255, 0.6)" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-label">STEP 3</span>
+                                    <h3 class="step-title">Development</h3>
+                                    <p class="step-desc">Writing clean, scalable code and building the solution with an
+                                        agile approach.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="step-item">
+                                <div class="step-visual">
+                                    <div class="step-icon-box">
+                                        <span class="step-emoji">🚀</span>
+                                    </div>
+                                    <!-- No Arrow for Last Item -->
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-label">STEP 4</span>
+                                    <h3 class="step-title">Launch</h3>
+                                    <p class="step-desc">Deploying to production, ensuring performance, and scaling for
+                                        growth.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tech Stack Section -->
+                <section id="tech-stack" class="tech-stack-section">
+                    <div class="marquee">
+                        <ul class="marquee-content">
+                            <li><i class="fab fa-github"></i></li>
+                            <li><i class="fab fa-codepen"></i></li>
+                            <li><i class="fab fa-free-code-camp"></i></li>
+                            <li><i class="fab fa-dev"></i></li>
+                            <li><i class="fab fa-react"></i></li>
+                            <li><i class="fab fa-vuejs"></i></li>
+                            <li><i class="fab fa-angular"></i></li>
+                            <li><i class="fab fa-node"></i></li>
+                            <li><i class="fab fa-wordpress"></i></li>
+                            <li><i class="fab fa-aws"></i></li>
+                            <li><i class="fab fa-docker"></i></li>
+                            <li><i class="fab fa-android"></i></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="section contact-form-section container">
+                    <div class="contact-form-wrapper">
+                        <h1 class="contact-title">Contact us</h1>
+                        <p class="contact-subtitle">Got any questions or suggestions? Fill out this form to reach out.
+                        </p>
+
+                        <form class="contact-form" action="https://formspree.io/f/xqeezkyz" method="POST">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <input type="text" name="name" placeholder="Enter your name" required minlength="2"
+                                        pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces">
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <input type="tel" name="phone" placeholder="Enter your phone number" required
+                                    pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+                            </div>
+                            <div class="input-group">
+                                <textarea name="message" placeholder="Enter your message" rows="1" required
+                                    minlength="10" title="Message must be at least 10 characters long"></textarea>
+                            </div>
+
+                            <button type="submit" class="contact-send-btn">SEND</button>
+                        </form>
+
+                        <p class="contact-footer-text">You can email us directly at <a
+                                href="mailto:teamtriuss@gmail.com">teamtriuss@gmail.com</a></p>
+                    </div>
+                </section>
+                <footer class="footer">
+                    <div class="container footer-grid">
+                        <div class="footer-logo">SOLUTIONS</div>
+                        <div class="footer-links">
+                            <a href="#about">About</a>
+                            <a href="#services">Services</a>
+                            <a href="#process">Process</a>
+                            <a href="#work">Work</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Digital Solutions Specialist. Built with precision.</p>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Contact Success Popup -->
+                <div id="contact-popup" class="popup-overlay">
+                    <div class="popup-content">
+                        <div class="popup-icon">✅</div>
+                        <h2>Message Sent!</h2>
+                        <p>Thank you for reaching out. We will get back to you shortly.</p>
+                        <button id="close-popup">Close</button>
+                    </div>
+                </div>
+
+                <script>
+                    // Contact Form Handling with AJAX
+                    const contactForm = document.querySelector('.contact-form');
+                    const popup = document.getElementById('contact-popup');
+                    const closePopupBtn = document.getElementById('close-popup');
+
+                    if (contactForm) {
+                        contactForm.addEventListener('submit', async function (e) {
+                            e.preventDefault();
+                            const submitBtn = contactForm.querySelector('button[type="submit"]');
+                            const originalText = submitBtn.innerText;
+
+                            submitBtn.innerText = 'SENDING...';
+                            submitBtn.disabled = true;
+
+                            const formData = new FormData(contactForm);
+
+                            try {
+                                const response = await fetch(contactForm.action, {
+                                    method: 'POST',
+                                    body: formData,
+                                    headers: {
+                                        'Accept': 'application/json'
+                                    }
+                                });
+
+                                if (response.ok) {
+                                    // Show Popup
+                                    popup.classList.add('active');
+                                    contactForm.reset();
+                                } else {
+                                    alert("Oops! There was a problem submitting your form");
+                                }
+                            } catch (error) {
+                                alert("Oops! There was a problem submitting your form");
+                            } finally {
+                                submitBtn.innerText = originalText;
+                                submitBtn.disabled = false;
+                            }
+                        });
+                    }
+
+                    if (closePopupBtn) {
+                        closePopupBtn.addEventListener('click', () => {
+                            popup.classList.remove('active');
+                        });
+                    }
+
+                    // Close on click outside
+                    window.addEventListener('click', (e) => {
+                        if (e.target == popup) {
+                            popup.classList.remove('active');
+                        }
+                    });
+                </script>
+            </main>
+
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll reveal basic implementation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.section, .service-horizontal-card, .project-card, .process-step, .testimonial-card').forEach(el => {
+                el.classList.add('reveal');
+                observer.observe(el);
+            });
+
+            // GSAP ScrollSmoother Initialization
+            gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrambleTextPlugin, SplitText);
+
+            window.smoother = ScrollSmoother.create({
+                smooth: 2,
+                effects: true,
+                smoothTouch: 0.1,
+            });
+
+            // Scramble Text Animation for Services Heading
+            const scrambleTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".services-heading-section",
+                    start: "top 80%",
+                },
+                defaults: { ease: "none" }
+            });
+
+            scrambleTl.to("#scramble-services", {
+                scrambleText: {
+                    text: "SERVICES",
+                    chars: "upperCase",
+                    speed: 0.3
+                },
+                duration: 1.5
+            })
+                .to("#scramble-provided", {
+                    scrambleText: {
+                        text: "PROVIDED",
+                        chars: "upperCase",
+                        speed: 0.3
+                    },
+                    duration: 1.5
+                });
+
+            // SplitText Animation for Projects Done Heading
+            const projectTitle = document.querySelector('.projects-main-title');
+            if (projectTitle) {
+                const split = new SplitText(projectTitle, { type: "chars" });
+                gsap.from(split.chars, {
+                    scrollTrigger: {
+                        trigger: projectTitle,
+                        start: "top 85%",
+                    },
+                    opacity: 0,
+                    y: 50,
+                    rotateX: -90,
+                    stagger: 0.05,
+                    duration: 1,
+                    ease: "back.out(1.7)"
+                });
+            }
+
+            // GSAP Horizontal Scroll for Services
+            const scrollHorizontal = document.querySelector('.scroll-horizontal');
+            const horizontalSection = document.querySelector('.horizontal-scroll-section');
+
+            if (scrollHorizontal && horizontalSection) {
+                const scrollAmount = scrollHorizontal.scrollWidth - window.innerWidth + (window.innerWidth * 0.05);
+                gsap.to(scrollHorizontal, {
+                    x: -scrollAmount,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: horizontalSection,
+                        pin: true,
+                        scrub: 1,
+                        start: "top top",
+                        end: () => `+=${scrollAmount}`,
+                        invalidateOnRefresh: true,
+                    }
+                });
+            }
+
+            // About Us Section Animations
+            // Image Side: Slide in from Left
+            gsap.from(".about-us-image-side", {
+                scrollTrigger: {
+                    trigger: ".about-us-section",
+                    start: "top 80%",
+                },
+                x: -100,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+
+            // Content Side: Slide in from Right
+            gsap.from(".about-us-content", {
+                scrollTrigger: {
+                    trigger: ".about-us-section",
+                    start: "top 80%",
+                },
+                x: 100,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out",
+                delay: 0.2
+            });
+
+            // Services Cards Animation
+            // Delay adjusted to wait for heading scramble (approx 1.5s duration)
+            const cardsTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".exp-card-section",
+                    start: "top 75%",
+                }
+            });
+
+            cardsTl.from(".exp-card", {
+                x: 150,
+                opacity: 0,
+                duration: 1.0,
+                stagger: 0.1,
+                ease: "power2.out",
+                delay: 1.5, // Wait for heading animation
+                onComplete: () => {
+                    // Add class to trigger CSS transition for internal content
+                    document.querySelectorAll('.exp-card').forEach(card => card.classList.add('animate-content'));
+                }
+            });
+
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+
+                    // Prevent scroll when menu is open
+                    if (navLinks.classList.contains('active')) {
+                        if (window.smoother) window.smoother.paused(true);
+                    } else {
+                        if (window.smoother) window.smoother.paused(false);
+                    }
+                });
+
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-links a, .footer-links a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const href = link.getAttribute('href');
+                        if (href.startsWith('#')) {
+                            e.preventDefault();
+                            const target = document.querySelector(href);
+                            if (target) {
+                                smoother.scrollTo(target, true, "top top");
+                            }
+                        }
+
+                        // Close menu if open
+                        menuToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        if (window.smoother) window.smoother.paused(false);
+                    });
+                });
+            }
+        });
+    </script>
+    <script src="js/projects-carousel.js"></script>
+    <script src="js/trial-section.js"></script>
+    <script src="js/fluid.js"></script>
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <script>
+        // Hero Animation Logic
+        function setupHeroStates() {
+            // Initial states: Hidden or positioned for entry
+            gsap.set(".hero p", { y: 50, opacity: 0 });
+            gsap.set(".social-sidebar .social-link", { x: 50, opacity: 0 });
+            gsap.set(".grid-background", { opacity: 0, scale: 1.1 });
+            gsap.set(".hero", { scale: 0.95 });
+            // Hide H1 initially to prevent flash before split
+            gsap.set(".hero h1", { opacity: 0 });
+            // Init cards hidden
+            gsap.set(".card", { y: 100, opacity: 0 });
+        }
+
+        function playHeroAnimations() {
+            const heroTl = gsap.timeline();
+
+            // 1. Reveal Background & Zoom Hero Block
+            heroTl.to(".grid-background", {
+                opacity: 1,
+                scale: 1,
+                duration: 2,
+                ease: "power2.out"
+            }, "start")
+                .to(".hero", {
+                    scale: 1,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }, "start");
+
+            // 2. Main Heading: Staggered Word Reveal
+            const heroHeading = document.querySelector(".hero h1");
+            if (heroHeading && typeof SplitText !== 'undefined') {
+                try {
+                    // Make parent visible, then animate words
+                    gsap.set(".hero h1", { opacity: 1 });
+                    const splitHero = new SplitText(heroHeading, { type: "words, chars" });
+
+                    heroTl.from(splitHero.words, {
+                        y: -50,
+                        opacity: 0,
+                        duration: 1,
+                        stagger: 0.1,
+                        ease: "back.out(1.7)"
+                    }, "start+=0.5");
+                } catch (e) {
+                    // Fallback
+                    heroTl.to(".hero h1", { y: 0, opacity: 1, duration: 1 }, "start+=0.5");
+                }
+            } else {
+                // Fallback if SplitText missing
+                gsap.set(".hero h1", { y: -50 });
+                heroTl.to(".hero h1", { y: 0, opacity: 1, duration: 1 }, "start+=0.5");
+            }
+
+            // Pulse Effect (after Reveal)
+            heroTl.add(() => {
+                if (heroHeading) heroHeading.classList.add("glow-pulse");
+            }, "-=0.2");
+
+            // 3. Subtext: Slide Up (Content First)
+            heroTl.to(".hero p", {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out"
+            }, "-=0.5");
+
+            // 4. Cards/Images: Slide Up (After Content)
+            heroTl.to(".card", {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                stagger: 0.2, // Stagger individually
+                ease: "power2.out"
+            }, "-=0.5"); // Start slightly before subtext ends for smoothness, or use ">" for strict sequence
+
+            // 5. Social Icons: Slide In
+            heroTl.to(".social-sidebar .social-link", {
+                x: 0,
+                opacity: 1,
+                stagger: 0.1,
+                duration: 0.8,
+                ease: "power2.out"
+            }, "-=0.8");
+        }
+
+        // Willem Loading Animation Logic (Inlined for reliability)
+        function initWillemLoader() {
+            window.scrollTo(0, 0);
+
+            const isMobile = window.innerWidth <= 767;
+            const container = document.querySelector('.willem-header');
+
+            if (isMobile) {
+                if (container) container.style.display = 'none';
+                setupHeroStates();
+                playHeroAnimations();
+                if (window.smoother) {
+                    window.smoother.paused(false);
+                    window.smoother.refresh();
+                }
+                return;
+            }
+
+            // document.body.style.overflow = 'hidden'; // Avoid conflicting with ScrollSmoother if possible, or use paused
+            if (window.smoother) window.smoother.paused(true);
+            if (!container) return;
+
+            // Setup Hero immediately so it's ready behind the loader
+            setupHeroStates();
+
+            const loadingLetters = container.querySelectorAll('.willem__letter');
+            const box = container.querySelector('.willem-loader__box');
+            const growingImage = container.querySelector('.willem__growing-image');
+            const headingStart = container.querySelector('.willem__h1-start');
+            const headingEnd = container.querySelector('.willem__h1-end');
+            const coverImageExtras = container.querySelectorAll('.willem__cover-image-extra');
+
+            const tl = gsap.timeline({
+                defaults: { ease: 'expo.inOut' },
+                onStart: () => {
+                    container.classList.remove('is--hidden');
+                    console.log('Loader animation started');
+                }
+            });
+
+            // 1. Name comes up
+            if (loadingLetters.length) {
+                tl.from(loadingLetters, {
+                    yPercent: 100,
+                    stagger: 0.05,
+                    duration: 1
+                });
+            }
+
+            // 2. Split and reveal images
+            if (box) {
+                tl.to(box, { width: '1.5em', duration: 1.25 }, '+=0.2');
+                tl.to(growingImage, { width: '100%', duration: 1.25 }, '<');
+                tl.to(headingStart, { x: '-0.1em', duration: 1.25 }, '<');
+                tl.to(headingEnd, { x: '0.1em', duration: 1.25 }, '<');
+            }
+
+            // 3. Cycle images
+            if (coverImageExtras.length) {
+                tl.to(coverImageExtras, {
+                    opacity: 0,
+                    duration: 0.1,
+                    ease: 'none',
+                    stagger: 0.5
+                }, '+=0.2');
+            }
+
+            // 4. Zoom and Reveal Portfolio
+            if (growingImage) {
+                tl.to(growingImage, {
+                    width: '100vw',
+                    height: '100vh',
+                    duration: 1.5,
+                    ease: 'expo.inOut'
+                }, '+=0.5');
+
+                tl.to(box, { width: '100vw', duration: 1.5 }, '<');
+                tl.to([headingStart, headingEnd], { autoAlpha: 0, duration: 0.5 }, '<');
+            }
+
+            // 5. Fade out to site
+            tl.to(container, {
+                opacity: 0,
+                duration: 1,
+                onComplete: () => {
+                    container.style.display = 'none';
+                    if (window.smoother) {
+                        window.smoother.paused(false);
+                        window.smoother.refresh();
+                    }
+                    console.log('Loader finished');
+
+                    // Trigger Hero Animations
+                    playHeroAnimations();
+                }
+            });
+        }
+
+        // Initialize
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initWillemLoader);
+        } else {
+            initWillemLoader();
+        }
+
+        // Safety timeout
+        setTimeout(() => {
+            const container = document.querySelector('.willem-header');
+            if (container && container.style.display !== 'none') {
+                gsap.to(container, {
+                    opacity: 0, duration: 1, onComplete: () => {
+                        container.style.display = 'none';
+                        if (window.smoother) {
+                            window.smoother.paused(false);
+                            window.smoother.refresh();
+                        }
+                    }
+                });
+            }
+        }, 12000);
+    </script>
+    <script>
+        // Tech Stack Marquee Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const root = document.documentElement;
+            const marqueeContent = document.querySelector("ul.marquee-content");
+
+            if (marqueeContent) {
+                const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+                root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+
+                // Clone elements for infinite scroll loop
+                for (let i = 0; i < marqueeElementsDisplayed; i++) {
+                    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+                }
+
+                // Update duration based on count (optional dynamic adjustment)
+                // root.style.setProperty("--marquee-animation-duration", (marqueeContent.children.length * 3) + 's');
+            }
+        });
+    </script>
+</body>
+
+</html>
