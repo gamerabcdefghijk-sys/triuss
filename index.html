@@ -22,9 +22,7 @@
     <!-- GSAP and Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
-    <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
-    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+
 </head>
 
 <body>
@@ -631,57 +629,87 @@
                 observer.observe(el);
             });
 
-            // GSAP ScrollSmoother Initialization
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrambleTextPlugin, SplitText);
+            // GSAP Initialization with Safety Checks
+            gsap.registerPlugin(ScrollTrigger);
 
-            window.smoother = ScrollSmoother.create({
-                smooth: 2,
-                effects: true,
-                smoothTouch: 0.1,
-            });
+            // ScrollSmoother
+            if (typeof ScrollSmoother !== 'undefined') {
+                gsap.registerPlugin(ScrollSmoother);
+                window.smoother = ScrollSmoother.create({
+                    smooth: 2,
+                    effects: true,
+                    smoothTouch: 0.1,
+                });
+            }
 
-            // Scramble Text Animation for Services Heading
-            const scrambleTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".services-heading-section",
-                    start: "top 80%",
-                },
-                defaults: { ease: "none" }
-            });
+            // ScrambleText Animation (Services Heading)
+            const scrambleServices = document.getElementById('scramble-services');
+            const scrambleProvided = document.getElementById('scramble-provided');
 
-            scrambleTl.to("#scramble-services", {
-                scrambleText: {
-                    text: "SERVICES",
-                    chars: "upperCase",
-                    speed: 0.3
-                },
-                duration: 1.5
-            })
-                .to("#scramble-provided", {
-                    scrambleText: {
-                        text: "PROVIDED",
-                        chars: "upperCase",
-                        speed: 0.3
+            if (typeof ScrambleTextPlugin !== 'undefined') {
+                gsap.registerPlugin(ScrambleTextPlugin);
+                const scrambleTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".services-heading-section",
+                        start: "top 80%",
                     },
+                    defaults: { ease: "none" }
+                });
+
+                scrambleTl.to("#scramble-services", {
+                    scrambleText: { text: "SERVICES", chars: "upperCase", speed: 0.3 },
+                    duration: 1.5
+                }).to("#scramble-provided", {
+                    scrambleText: { text: "PROVIDED", chars: "upperCase", speed: 0.3 },
                     duration: 1.5
                 });
+            } else {
+                // Fallback: Set text explicitly and simple fade in
+                if (scrambleServices) scrambleServices.innerText = "SERVICES";
+                if (scrambleProvided) scrambleProvided.innerText = "PROVIDED";
 
-            // SplitText Animation for Projects Done Heading
+                gsap.from("#scramble-services, #scramble-provided", {
+                    opacity: 0,
+                    y: 20,
+                    duration: 1,
+                    stagger: 0.2,
+                    scrollTrigger: {
+                        trigger: ".services-heading-section",
+                        start: "top 80%",
+                    }
+                });
+            }
+
+            // SplitText Animation (Projects Heading)
             const projectTitle = document.querySelector('.projects-main-title');
             if (projectTitle) {
-                const split = new SplitText(projectTitle, { type: "chars" });
-                gsap.from(split.chars, {
-                    scrollTrigger: {
-                        trigger: projectTitle,
-                        start: "top 85%",
-                    },
-                    opacity: 0,
-                    y: 50,
-                    rotateX: -90,
-                    stagger: 0.05,
-                    duration: 1,
-                    ease: "back.out(1.7)"
-                });
+                if (typeof SplitText !== 'undefined') {
+                    gsap.registerPlugin(SplitText);
+                    const split = new SplitText(projectTitle, { type: "chars" });
+                    gsap.from(split.chars, {
+                        scrollTrigger: {
+                            trigger: projectTitle,
+                            start: "top 85%",
+                        },
+                        opacity: 0,
+                        y: 50,
+                        rotateX: -90,
+                        stagger: 0.05,
+                        duration: 1,
+                        ease: "back.out(1.7)"
+                    });
+                } else {
+                    gsap.from(projectTitle, {
+                        scrollTrigger: {
+                            trigger: projectTitle,
+                            start: "top 85%",
+                        },
+                        opacity: 0,
+                        y: 30,
+                        duration: 1,
+                        ease: "power2.out"
+                    });
+                }
             }
 
             // GSAP Horizontal Scroll for Services
