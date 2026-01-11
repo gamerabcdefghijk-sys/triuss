@@ -12,7 +12,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@700&family=Poppins:wght@900&family=Space+Mono:wght@400;700&family=Oswald:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/favicon_logo.png">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,19 +23,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <script>
-        // Force scroll to top on refresh
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        }
-        // Clear hash to prevent jump
-        if (window.location.hash) {
-            history.replaceState(null, null, ' ');
-        }
-    </script>
 </head>
 
 <body>
@@ -114,7 +100,7 @@
     <canvas id="fluid-canvas"></canvas>
 
     <header>
-        <nav class="nav-wrapper">
+        <nav class="container">
             <div class="logo">TRIUSS</div>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -488,42 +474,21 @@
                 <section id="tech-stack" class="tech-stack-section">
                     <div class="marquee">
                         <ul class="marquee-content">
-                            <!-- Specific Icons from User Image -->
                             <li><i class="fab fa-github"></i></li>
-                            <li><i class="fas fa-cube"></i></li>
-                            <li><i class="fas fa-fire"></i></li>
+                            <li><i class="fab fa-codepen"></i></li>
+                            <li><i class="fab fa-free-code-camp"></i></li>
                             <li><i class="fab fa-dev"></i></li>
                             <li><i class="fab fa-react"></i></li>
-
-                            <!-- Duplicates for seamless scrolling -->
-                            <li><i class="fab fa-github"></i></li>
-                            <li><i class="fas fa-cube"></i></li>
-                            <li><i class="fas fa-fire"></i></li>
-                            <li><i class="fab fa-dev"></i></li>
-                            <li><i class="fab fa-react"></i></li>
-
-                            <li><i class="fab fa-github"></i></li>
-                            <li><i class="fas fa-cube"></i></li>
-                            <li><i class="fas fa-fire"></i></li>
-                            <li><i class="fab fa-dev"></i></li>
-                            <li><i class="fab fa-react"></i></li>
+                            <li><i class="fab fa-vuejs"></i></li>
+                            <li><i class="fab fa-angular"></i></li>
+                            <li><i class="fab fa-node"></i></li>
+                            <li><i class="fab fa-wordpress"></i></li>
+                            <li><i class="fab fa-aws"></i></li>
+                            <li><i class="fab fa-docker"></i></li>
+                            <li><i class="fab fa-android"></i></li>
                         </ul>
                     </div>
                 </section>
-
-                <script>
-                    // Marquee Logic
-                    const root = document.documentElement;
-                    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
-                    const marqueeContent = document.querySelector(".marquee-content");
-
-                    if (marqueeContent) {
-                        root.style.setProperty("--marquee-elements", marqueeContent.children.length);
-
-                        // Clone elements to ensure width is sufficient for seamless loop if needed, 
-                        // but strictly setting --marquee-elements matches the CSS logic found in style.css steps
-                    }
-                </script>
 
                 <!-- Contact Section -->
                 <section id="contact" class="section contact-form-section container">
@@ -559,37 +524,17 @@
                     </div>
                 </section>
                 <footer class="footer">
-                    <div class="container">
-                        <div class="footer-top">
-                            <div class="footer-brand">
-                                <div class="footer-logo">TRIUSS</div>
-                                <p class="footer-desc">Empowering businesses with intelligent digital solutions. From
-                                    web to AI, we build the future.</p>
-                            </div>
-
-                            <div class="footer-socials">
-                                <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram"><i
-                                        class="fab fa-instagram"></i></a>
-                                <a href="https://wa.me/" target="_blank" class="social-icon" title="WhatsApp"><i
-                                        class="fab fa-whatsapp"></i></a>
-                                <a href="mailto:teamtriuss@gmail.com" class="social-icon" title="Gmail"><i
-                                        class="fab fa-google"></i></a>
-                            </div>
+                    <div class="container footer-grid">
+                        <div class="footer-logo">SOLUTIONS</div>
+                        <div class="footer-links">
+                            <a href="#about">About</a>
+                            <a href="#services">Services</a>
+                            <a href="#process">Process</a>
+                            <a href="#work">Work</a>
+                            <a href="#contact">Contact</a>
                         </div>
-
-                        <div class="footer-divider"></div>
-
-                        <div class="footer-bottom-grid">
-                            <div class="footer-links">
-                                <a href="#about">About</a>
-                                <a href="#services">Services</a>
-                                <a href="#process">Process</a>
-                                <a href="#work">Work</a>
-                                <a href="#contact">Contact</a>
-                            </div>
-                            <div class="footer-copyright">
-                                <p>&copy; 2026 TRIUSS. Built with precision.</p>
-                            </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Digital Solutions Specialist. Built with precision.</p>
                         </div>
                     </div>
                 </footer>
@@ -870,7 +815,11 @@
                             e.preventDefault();
                             const target = document.querySelector(href);
                             if (target) {
-                                smoother.scrollTo(target, true, "top top");
+                                if (window.smoother) {
+                                    window.smoother.scrollTo(target, true, "top top");
+                                } else {
+                                    target.scrollIntoView({ behavior: 'smooth' });
+                                }
                             }
                         }
 
@@ -886,64 +835,23 @@
     <script src="js/projects-carousel.js"></script>
     <script src="js/trial-section.js"></script>
     <script src="js/fluid.js"></script>
-    <script src="js/main.js"></script>
     <!-- Social Sidebar -->
     <div class="social-sidebar">
         <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
     <script>
-        // --- Custom Polyfills for Missing Plugins ---
-
-        // Simple manual split text function (chars)
-        function splitTextToSpans(element) {
-            if (!element) return [];
-            const text = element.innerText;
-            const chars = text.split('');
-            element.innerHTML = '';
-            const spans = [];
-            chars.forEach(char => {
-                const span = document.createElement('span');
-                span.innerText = char === ' ' ? '\u00A0' : char;
-                span.style.display = 'inline-block';
-                // span.style.opacity = '0'; // Let GSAP handle opacity
-                element.appendChild(span);
-                spans.push(span);
-            });
-            return spans;
-        }
-
-        // Simple manual split text function (words)
-        function splitTextToWords(element) {
-            if (!element) return [];
-            const text = element.innerText;
-            const words = text.split(' ');
-            element.innerHTML = '';
-            const spans = [];
-            words.forEach((word, index) => {
-                const wordWrapper = document.createElement('span');
-                wordWrapper.style.display = 'inline-block';
-                wordWrapper.style.marginRight = '0.25em'; // Space between words
-
-                // Optional: Split word into chars if needed, but for now just words
-                wordWrapper.innerText = word;
-
-                element.appendChild(wordWrapper);
-                spans.push(wordWrapper);
-            });
-            return spans;
-        }
-
         // Hero Animation Logic
         function setupHeroStates() {
             // Initial states: Hidden or positioned for entry
-            // Using autoAlpha handles visibility:hidden + opacity:0
-            gsap.set(".hero p", { y: 50, autoAlpha: 0 });
-            gsap.set(".social-sidebar .social-link", { x: 50, autoAlpha: 0 });
-            gsap.set(".grid-background", { autoAlpha: 0, scale: 1.1 });
+            gsap.set(".hero p", { y: 50, opacity: 0 });
+            gsap.set(".social-sidebar .social-link", { x: 50, opacity: 0 });
+            gsap.set(".grid-background", { opacity: 0, scale: 1.1 });
             gsap.set(".hero", { scale: 0.95 });
-            gsap.set(".hero h1", { autoAlpha: 0 });
-            gsap.set(".card", { y: 100, autoAlpha: 0 });
+            // Hide H1 initially to prevent flash before split
+            gsap.set(".hero h1", { opacity: 0 });
+            // Init cards hidden
+            gsap.set(".card", { y: 100, opacity: 0 });
         }
 
         function playHeroAnimations() {
@@ -951,324 +859,214 @@
 
             // 1. Reveal Background & Zoom Hero Block
             heroTl.to(".grid-background", {
-                autoAlpha: 1,
+                opacity: 1,
                 scale: 1,
-                duration: 1.5, // Reduced from 2
+                duration: 2,
                 ease: "power2.out"
             }, "start")
                 .to(".hero", {
                     scale: 1,
-                    duration: 1.2, // Reduced from 1.5
+                    duration: 1.5,
                     ease: "power2.out"
                 }, "start");
 
-            // 2. Main Heading: Staggered Word/Char Reveal
+            // 2. Main Heading: Staggered Word Reveal
             const heroHeading = document.querySelector(".hero h1");
-            if (heroHeading) {
-                gsap.set(heroHeading, { autoAlpha: 1 }); // Ensure parent is visible
-
-                if (typeof SplitText !== 'undefined') {
+            if (heroHeading && typeof SplitText !== 'undefined') {
+                try {
+                    // Make parent visible, then animate words
+                    gsap.set(".hero h1", { opacity: 1 });
                     const splitHero = new SplitText(heroHeading, { type: "words, chars" });
-                    heroTl.from(splitHero.words, {
-                        y: 50,
-                        autoAlpha: 0,
-                        duration: 0.8, // Reduced from 1
-                        stagger: 0.05, // Reduced from 0.1
-                        ease: "back.out(1.7)"
-                    }, "start+=0.2"); // Reduced from +0.5
-                } else {
-                    const wordSpans = splitTextToWords(heroHeading);
-                    heroTl.from(wordSpans, {
-                        y: 50,
-                        autoAlpha: 0,
-                        duration: 0.8, // Reduced from 1
-                        stagger: 0.05, // Reduced from 0.1
-                        ease: "back.out(1.7)"
-                    }, "start+=0.2"); // Reduced from +0.5
-                }
 
-                heroTl.add(() => {
-                    heroHeading.classList.add("glow-pulse");
-                }, "-=0.2");
+                    heroTl.from(splitHero.words, {
+                        y: -50,
+                        opacity: 0,
+                        duration: 1,
+                        stagger: 0.1,
+                        ease: "back.out(1.7)"
+                    }, "start+=0.5");
+                } catch (e) {
+                    // Fallback
+                    heroTl.to(".hero h1", { y: 0, opacity: 1, duration: 1 }, "start+=0.5");
+                }
+            } else {
+                // Fallback if SplitText missing
+                gsap.set(".hero h1", { y: -50 });
+                heroTl.to(".hero h1", { y: 0, opacity: 1, duration: 1 }, "start+=0.5");
             }
 
-            // 3. Subtext
+            // Pulse Effect (after Reveal)
+            heroTl.add(() => {
+                if (heroHeading) heroHeading.classList.add("glow-pulse");
+            }, "-=0.2");
+
+            // 3. Subtext: Slide Up (Content First)
             heroTl.to(".hero p", {
                 y: 0,
-                autoAlpha: 1,
-                duration: 0.8, // Reduced from 1
+                opacity: 1,
+                duration: 1,
                 ease: "power2.out"
-            }, "-=0.4"); // Reduced overlap
+            }, "-=0.5");
 
-            // 4. Cards/Images
+            // 4. Cards/Images: Slide Up (After Content)
             heroTl.to(".card", {
                 y: 0,
-                autoAlpha: 1,
-                duration: 0.8, // Reduced from 1
-                stagger: 0.1, // Reduced from 0.2
+                opacity: 1,
+                duration: 1,
+                stagger: 0.2, // Stagger individually
                 ease: "power2.out"
-            }, "-=0.6"); // Adjusted overlap for tighter sequence
+            }, "-=0.5"); // Start slightly before subtext ends for smoothness, or use ">" for strict sequence
 
-            // 5. Social Icons
+            // 5. Social Icons: Slide In
             heroTl.to(".social-sidebar .social-link", {
                 x: 0,
-                autoAlpha: 1,
+                opacity: 1,
                 stagger: 0.1,
-                duration: 0.6, // Reduced from 0.8
+                duration: 0.8,
                 ease: "power2.out"
-            }, "-=0.6");
+            }, "-=0.8");
         }
 
-        // Run setup immediately to ensure initial state is correct (hidden) behind loader
-        setupHeroStates();
+        // Willem Loading Animation Logic (Inlined for reliability)
+        function initWillemLoader() {
+            window.scrollTo(0, 0);
 
-        // Monitor for Loader Completion to trigger Content Reveal
-        const checkLoader = setInterval(() => {
-            const loader = document.querySelector('.willem-header');
-            // If loader is gone or main.js has hidden it
-            if (!loader || (getComputedStyle(loader).display === 'none' || getComputedStyle(loader).opacity === '0')) {
-                clearInterval(checkLoader);
-                console.log("Loader finished. Triggering hero animations.");
+            const isMobile = window.innerWidth <= 767;
+            const container = document.querySelector('.willem-header');
 
-                // Ensure Hero Animations Play
+            if (isMobile) {
+                if (container) container.style.display = 'none';
+                setupHeroStates();
                 playHeroAnimations();
-
-                // Refresh ScrollTrigger to ensure positions are correct after loader removal
-                // This is CRITICAL for sections down the page to become visible
-                ScrollTrigger.refresh();
-            }
-        }, 500);
-
-        // --- Main GSAP Scroll Logic ---
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // ScrambleText Animation (Services Heading)
-            const scrambleServices = document.getElementById('scramble-services');
-            const scrambleProvided = document.getElementById('scramble-provided');
-
-            if (typeof ScrambleTextPlugin !== 'undefined') {
-                const scrambleTl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".services-heading-section",
-                        start: "top 85%", // Trigger slightly earlier
-                    },
-                    defaults: { ease: "none" }
-                });
-                scrambleTl.to("#scramble-services", {
-                    scrambleText: { text: "SERVICES", chars: "upperCase", speed: 0.3 },
-                    duration: 1.5
-                }).to("#scramble-provided", {
-                    scrambleText: { text: "PROVIDED", chars: "upperCase", speed: 0.3 },
-                    duration: 1.5
-                });
-            } else {
-                // Fallback: Advanced Text Reveal Animation
-
-                // 1. Prepare Text & Split
-                const servicesEl = document.getElementById('scramble-services');
-                const providedEl = document.getElementById('scramble-provided');
-
-                let chars = [];
-
-                if (servicesEl) {
-                    servicesEl.innerText = "SERVICES";
-                    servicesEl.style.opacity = 1; // Ensure parent is visible
-                    const sChars = splitTextToSpans(servicesEl);
-                    chars = chars.concat(sChars);
+                if (window.smoother) {
+                    window.smoother.paused(false);
+                    window.smoother.refresh();
                 }
-
-                if (providedEl) {
-                    providedEl.innerText = "PROVIDED";
-                    providedEl.style.opacity = 1; // Ensure parent is visible
-                    const pChars = splitTextToSpans(providedEl);
-                    chars = chars.concat(pChars);
-                }
-
-                // 2. Animate Characters
-                if (chars.length > 0) {
-                    gsap.fromTo(chars,
-                        {
-                            autoAlpha: 0,
-                            y: 50,
-                            rotateX: -90
-                        },
-                        {
-                            autoAlpha: 1,
-                            y: 0,
-                            rotateX: 0,
-                            duration: 0.8,
-                            stagger: 0.05,
-                            ease: "back.out(1.7)",
-                            scrollTrigger: {
-                                trigger: ".services-heading-section",
-                                start: "top 85%",
-                                toggleActions: "play none none reverse"
-                            }
-                        }
-                    );
-                }
+                return;
             }
 
-            // SplitText Animation (Projects Heading)
-            const projectTitle = document.querySelector('.projects-main-title');
-            if (projectTitle) {
-                // Determine if we use plugin or polyfill
-                const usePlugin = typeof SplitText !== 'undefined';
+            // document.body.style.overflow = 'hidden'; // Avoid conflicting with ScrollSmoother if possible, or use paused
+            if (window.smoother) window.smoother.paused(true);
+            if (!container) return;
 
-                // We use a from() tween, which handles existing visibility automatically
-                if (usePlugin) {
-                    const split = new SplitText(projectTitle, { type: "chars" });
-                    gsap.from(split.chars, {
-                        scrollTrigger: {
-                            trigger: projectTitle,
-                            start: "top 85%",
-                        },
-                        autoAlpha: 0,
-                        y: 50,
-                        rotateX: -90,
-                        stagger: 0.05,
-                        duration: 1,
-                        ease: "back.out(1.7)"
-                    });
-                } else {
-                    const charSpans = splitTextToSpans(projectTitle);
-                    gsap.from(charSpans, {
-                        scrollTrigger: {
-                            trigger: projectTitle,
-                            start: "top 85%",
-                        },
-                        autoAlpha: 0,
-                        y: 50,
-                        rotateX: -90,
-                        stagger: 0.05,
-                        duration: 1,
-                        ease: "back.out(1.7)"
-                    });
-                }
-            }
+            // Setup Hero immediately so it's ready behind the loader
+            setupHeroStates();
 
-            // About Us Image Slide
-            gsap.fromTo(".about-us-image-side",
-                { x: -100, autoAlpha: 0 },
-                {
-                    scrollTrigger: {
-                        trigger: ".about-us-section",
-                        start: "top 80%",
-                    },
-                    x: 0,
-                    autoAlpha: 1,
-                    duration: 1.2,
-                    ease: "power3.out"
-                }
-            );
+            const loadingLetters = container.querySelectorAll('.willem__letter');
+            const box = container.querySelector('.willem-loader__box');
+            const growingImage = container.querySelector('.willem__growing-image');
+            const headingStart = container.querySelector('.willem__h1-start');
+            const headingEnd = container.querySelector('.willem__h1-end');
+            const coverImageExtras = container.querySelectorAll('.willem__cover-image-extra');
 
-            // About Us Content Slide
-            gsap.fromTo(".about-us-content",
-                { x: 100, autoAlpha: 0 },
-                {
-                    scrollTrigger: {
-                        trigger: ".about-us-section",
-                        start: "top 80%",
-                    },
-                    x: 0,
-                    autoAlpha: 1,
-                    duration: 1.2,
-                    ease: "power3.out",
-                    delay: 0.2
-                }
-            );
-
-            // Service Cards Animation - Using fromTo for robustness
-            const cardsTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".exp-card-section",
-                    start: "top 75%",
+            const tl = gsap.timeline({
+                defaults: { ease: 'expo.inOut' },
+                onStart: () => {
+                    container.classList.remove('is--hidden');
+                    console.log('Loader animation started');
                 }
             });
 
-            const cards = document.querySelectorAll(".exp-card");
-            if (cards.length > 0) {
-                cardsTl.fromTo(cards,
-                    { x: 100, autoAlpha: 0 },
-                    {
-                        x: 0,
-                        autoAlpha: 1,
-                        duration: 0.8,
-                        stagger: 0.1,
-                        ease: "power2.out",
-                        onComplete: () => {
-                            cards.forEach(card => card.classList.add('animate-content'));
-                        }
-                    }
-                );
-            }
-
-            // Mobile Menu
-            const menuToggle = document.getElementById('mobile-menu');
-            const navLinks = document.querySelector('.nav-links');
-
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => {
-                    menuToggle.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                });
-
-                document.querySelectorAll('.nav-links a, .footer-links a').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        const href = link.getAttribute('href');
-                        if (href && href.startsWith('#')) {
-                            e.preventDefault();
-                            const target = document.querySelector(href);
-                            if (target) {
-                                target.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }
-                        menuToggle.classList.remove('active');
-                        navLinks.classList.remove('active');
-                    });
+            // 1. Name comes up
+            if (loadingLetters.length) {
+                tl.from(loadingLetters, {
+                    yPercent: 100,
+                    stagger: 0.05,
+                    duration: 1
                 });
             }
 
+            // 2. Split and reveal images
+            if (box) {
+                tl.to(box, { width: '1.5em', duration: 1.25 }, '+=0.2');
+                tl.to(growingImage, { width: '100%', duration: 1.25 }, '<');
+                tl.to(headingStart, { x: '-0.1em', duration: 1.25 }, '<');
+                tl.to(headingEnd, { x: '0.1em', duration: 1.25 }, '<');
+            }
 
-            // Scroll Spy for Active Link State
-            const sections = document.querySelectorAll('section');
-            const navItems = document.querySelectorAll('.nav-links a');
+            // 3. Cycle images
+            if (coverImageExtras.length) {
+                tl.to(coverImageExtras, {
+                    opacity: 0,
+                    duration: 0.1,
+                    ease: 'none',
+                    stagger: 0.5
+                }, '+=0.2');
+            }
 
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    // Offset by approx header height (e.g., 100px)
-                    if (pageYOffset >= (sectionTop - 150)) {
-                        current = section.getAttribute('id');
+            // 4. Zoom and Reveal Portfolio
+            if (growingImage) {
+                tl.to(growingImage, {
+                    width: '100vw',
+                    height: '100vh',
+                    duration: 1.5,
+                    ease: 'expo.inOut'
+                }, '+=0.5');
+
+                tl.to(box, { width: '100vw', duration: 1.5 }, '<');
+                tl.to([headingStart, headingEnd], { autoAlpha: 0, duration: 0.5 }, '<');
+            }
+
+            // 5. Fade out to site
+            tl.to(container, {
+                opacity: 0,
+                duration: 1,
+                onComplete: () => {
+                    container.style.display = 'none';
+                    if (window.smoother) {
+                        window.smoother.paused(false);
+                        window.smoother.refresh();
                     }
-                });
+                    console.log('Loader finished');
 
-                navItems.forEach(li => {
-                    li.classList.remove('active');
-                    if (li.getAttribute('href').includes(current)) {
-                        li.classList.add('active');
-                    }
-                });
+                    // Trigger Hero Animations
+                    playHeroAnimations();
+                }
             });
+        }
 
-        });
+        // Initialize
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initWillemLoader);
+        } else {
+            initWillemLoader();
+        }
 
-        // Final Safety: Force show everything after 5 seconds if triggers fail (e.g. user scrolled past)
+        // Safety timeout
         setTimeout(() => {
-            console.log("Safety Timeout: Ensuring core elements are visible.");
-            // Force reset opacity for items that might be stuck
-            gsap.to(".hero h1, .hero p, .card, .about-us-image-side, .about-us-content, .exp-card", {
-                autoAlpha: 1,
-                opacity: 1,
-                // Do not force transforms, just visibility
-                clearProps: "opacity,visibility",
-                duration: 1
-            });
-            ScrollTrigger.refresh();
-        }, 15000); // 15 seconds (giving loader time)
+            const container = document.querySelector('.willem-header');
+            if (container && container.style.display !== 'none') {
+                gsap.to(container, {
+                    opacity: 0, duration: 1, onComplete: () => {
+                        container.style.display = 'none';
+                        if (window.smoother) {
+                            window.smoother.paused(false);
+                            window.smoother.refresh();
+                        }
+                    }
+                });
+            }
+        }, 12000);
+    </script>
+    <script>
+        // Tech Stack Marquee Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const root = document.documentElement;
+            const marqueeContent = document.querySelector("ul.marquee-content");
+
+            if (marqueeContent) {
+                const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+                root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+
+                // Clone elements for infinite scroll loop
+                for (let i = 0; i < marqueeElementsDisplayed; i++) {
+                    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+                }
+
+                // Update duration based on count (optional dynamic adjustment)
+                // root.style.setProperty("--marquee-animation-duration", (marqueeContent.children.length * 3) + 's');
+            }
+        });
     </script>
 </body>
 

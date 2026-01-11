@@ -72,28 +72,12 @@ body {
 }
 
 /* Typography Enhancements */
-/* Typography Enhancements - Unified Global Styles */
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 0.5em;
-    /* Standardize specific spacing */
-}
-
-/* Specific overrides ensuring uniformity */
-.section-title-large,
-.projects-main-title,
-.contact-title,
-.step-title,
-.exp-card h3,
-.team-member-name {
-    font-family: 'Oswald', sans-serif;
 }
 
 .subtitle {
@@ -104,25 +88,6 @@ h6 {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 12px;
-    font-family: 'Outfit', sans-serif;
-}
-
-.contact-title {
-    font-size: 72px;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-.contact-subtitle {
-    font-family: 'Outfit', sans-serif;
-    /* Ensure paragraphs/subtitles use Outfit */
-    font-size: 22px;
-    color: var(--subtext-color);
-    margin-bottom: 70px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 @keyframes textGlowPulse {
@@ -157,18 +122,11 @@ header {
     z-index: 1000;
 }
 
-.nav-wrapper {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    /* Minimal padding to push to corners */
-}
-
 nav {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    /* Removed space-between to control spacing with margins */
 }
 
 .logo {
@@ -177,8 +135,6 @@ nav {
     color: transparent;
     -webkit-text-stroke: 1.2px var(--accent-color);
     letter-spacing: 2px;
-    margin-right: auto;
-    /* Pushes everything else to the right */
 }
 
 .nav-links {
@@ -187,8 +143,6 @@ nav {
     gap: 40px;
     align-items: center;
     transition: var(--transition);
-    margin-left: auto;
-    /* Double insurance to push to right */
 }
 
 .menu-toggle {
@@ -215,16 +169,11 @@ nav {
         align-items: center;
         flex-direction: row;
         /* Ensure row direction */
-        padding: 0 35px;
-        /* Increased padding to pull hamburger inwards */
-        width: 100%;
-        /* Explicit width */
-        box-sizing: border-box;
-        /* Ensure padding doesn't cause overflow */
+        padding: 0 20px;
     }
 
     .menu-toggle {
-        display: flex !important;
+        display: flex;
         order: 2;
         /* Move hamburger to the right */
     }
@@ -233,8 +182,7 @@ nav {
         order: 1;
         /* Keep logo on the left */
         margin-bottom: 0px;
-        margin-right: 0;
-        /* Reset margins to let justify-content work */
+        /* Remove any bottom margin from previous responsive styles */
         -webkit-text-stroke: 1px var(--accent-color);
         /* Sharper on mobile */
     }
@@ -294,44 +242,9 @@ nav {
 .nav-links a {
     color: var(--accent-color);
     text-decoration: none;
-    font-size: 18px;
-    /* Increased from 15px */
+    font-size: 15px;
     font-weight: 500;
     transition: var(--transition);
-    position: relative;
-    /* For underline effect */
-}
-
-.nav-links a.active {
-    color: #fff;
-    /* Highlight color */
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent-color);
-    transform: scaleX(1);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent-color);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    transform: scaleX(1);
 }
 
 .nav-links a:hover {
@@ -397,9 +310,8 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 130px;
-    /* Reduced from 180px to decrease gap */
-    padding-bottom: 60px;
+    padding-top: 180px;
+    padding-bottom: 80px;
 }
 
 .hero-content {
@@ -726,8 +638,7 @@ nav {
 }
 
 .script-word {
-    font-family: 'Oswald', sans-serif;
-    /* Unified font */
+    font-family: 'Dancing Script', cursive;
     font-size: 160px;
     color: var(--text-color);
     line-height: 0.8;
@@ -763,7 +674,7 @@ nav {
 
 .services-subheading-seo p {
     font-size: 18px;
-    /* font-family: 'Outfit', sans-serif;  Inherited from body */
+    font-family: 'Outfit', sans-serif;
     color: var(--subtext-color);
     letter-spacing: 0.5px;
     line-height: 1.4;
@@ -972,8 +883,7 @@ nav {
 /* Projects Heading Section (Matches HTML class) */
 .projects-heading-section {
     width: 100%;
-    padding: 10px 0;
-    /* Reduced padding */
+    padding: 20px 0;
     text-align: center;
     position: relative;
     z-index: 5;
@@ -984,8 +894,7 @@ nav {
 
 .projects-main-title {
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(30px, 6vw, 60px);
-    /* Reduced significantly */
+    font-size: clamp(40px, 8vw, 120px);
     font-weight: 700;
     color: #fff;
     margin: 0;
@@ -1543,6 +1452,7 @@ nav {
 }
 
 .contact-title {
+    font-family: 'Outfit', sans-serif;
     font-size: 72px;
     font-weight: 700;
     color: var(--text-color);
@@ -1579,44 +1489,29 @@ nav {
 }
 
 .input-group {
-    /* Border removed in favor of direct input styling */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     transition: var(--transition);
 }
 
 .input-group:focus-within {
-    /* Focus handled on input element */
+    border-bottom-color: var(--accent-color);
 }
 
 .input-group input,
 .input-group textarea {
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    /* Added visible background */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Added border */
-    border-radius: 8px;
-    /* Rounded corners */
+    background: transparent;
+    border: none;
     outline: none;
     color: var(--text-color);
     font-size: 20px;
     font-family: 'Outfit', sans-serif;
-    padding: 15px 20px;
-    /* Added internal padding */
-    transition: var(--transition);
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-color);
+    padding: 15px 0;
 }
 
 .input-group input::placeholder,
 .input-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    /* Brightened placeholder text */
-    opacity: 1;
-    /* Ensure Firefox renders opacity correctly */
+    color: rgba(255, 255, 255, 0.2);
 }
 
 .input-group textarea {
@@ -1669,74 +1564,13 @@ nav {
 }
 
 /* Footer Modern Slim */
-/* Footer Enhanced */
 .footer {
-    padding: 60px 0 30px;
+    padding: 20px 0;
     border-top: 1px solid var(--border-color);
-    background: #050505;
-    /* Slightly darker than main bg */
+    background: rgba(10, 10, 10, 0.5);
 }
 
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 40px;
-}
-
-.footer-brand {
-    max-width: 400px;
-}
-
-.footer-logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.footer-desc {
-    color: var(--subtext-color);
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
-}
-
-.social-icon:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    color: #000;
-    transform: translateY(-3px);
-}
-
-.footer-divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.footer-bottom-grid {
+.footer-grid {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1744,46 +1578,42 @@ nav {
     gap: 20px;
 }
 
+.footer-logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent-color);
+    letter-spacing: 2px;
+}
+
 .footer-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .footer-links a {
-    color: #fff;
-    font-size: 15px;
+    color: var(--subtext-color);
+    font-size: 14px;
     text-decoration: none;
-    font-weight: 500;
-    position: relative;
     transition: var(--transition);
 }
 
 .footer-links a:hover {
     color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
-.footer-copyright {
-    color: var(--subtext-color);
-    font-size: 14px;
+.footer-bottom {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
 }
 
-@media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-bottom-grid {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .footer-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+.footer-bottom p {
+    color: #555;
+    font-size: 12px;
 }
 
 @media (max-width: 768px) {
@@ -2414,8 +2244,7 @@ nav {
     height: 500px;
     gap: 15px;
     margin: 0 auto;
-    padding: 0 40px;
-    /* Added side padding */
+    padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -2745,8 +2574,7 @@ nav {
 }
 
 :root {
-    --marquee-width: 100%;
-    /* Changed from 100vw to prevent scroll */
+    --marquee-width: 100vw;
     --marquee-height: 20vh;
     /* --marquee-elements: 12; defined with JavaScript */
     --marquee-elements-displayed: 5;
@@ -2800,8 +2628,7 @@ nav {
     }
 
     100% {
-        /* Move exactly one set of items (total/3) to create seamless loop */
-        transform: translateX(calc(-1 * var(--marquee-element-width) * (var(--marquee-elements) / 3)));
+        transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
     }
 }
 
